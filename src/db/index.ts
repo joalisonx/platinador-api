@@ -8,7 +8,7 @@ const db = client
   .collection<IGame>(process.env.DB_COLLECTION);
 
 async function getGames(): Promise<IGame[]> {
-  return db.find().toArray() as unknown as IGame[];
+  return await db.find().sort({$natural: -1}).toArray() as unknown as IGame[];
 }
 
 let games: IGame[] = [];
