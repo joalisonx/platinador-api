@@ -14,7 +14,7 @@ async function getGames(): Promise<IGame[]> {
 let games: IGame[] = [];
 setInterval(async () => {
   games = await getGames();
-}, 2 * 60000);
+}, 5 * 60000);
 
 export { 
   getGames, 
